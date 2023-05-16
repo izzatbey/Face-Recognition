@@ -34,7 +34,11 @@ while True:
         # Capture the image if there are faces and the interval has passed
         filename = f"image_{time.strftime('%Y%m%d%H%M%S')}.jpg"
         file_path = os.path.join(folder_name, filename)
-        cv2.imwrite(file_path, frame)
+        
+        for(x, y, width, height) in faces:
+            f_image = frame[y:y+height, x:x+width]
+            cv2.imwrite(file_path, f_image)
+        
         last_capture_time = time.time()
         print(f"Captured image: {file_path}")
 

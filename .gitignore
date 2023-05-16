@@ -1,4 +1,2 @@
 venv
-captured_faces
-aurelien.jpg
-gwenn.jpg
+*.jpg
